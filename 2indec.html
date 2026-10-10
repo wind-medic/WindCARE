@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC WIND - กฎสภา & เงื่อนไขการขึ้นกลุ่ม</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Prompt', sans-serif; background-color: #0f172a; color: #f8fafc; }
+    </style>
+</head>
+<body class="min-h-screen pb-12">
+
+    <!-- Header -->
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-amber-500 text-slate-950 p-3 rounded-xl font-bold text-xl flex items-center justify-center w-12 h-12">
+                    <i class="fa-solid font-bold">CC</i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-amber-400">CC WIND</h1>
+                    <p class="text-xs text-slate-400">ระบบกฎระเบียบสภา และเงื่อนไขการขึ้นกลุ่ม</p>
+                </div>
+            </div>
+            <div class="relative w-full md:w-80">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
+                <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="ค้นหากฎ หรือบทลงโทษ..." 
+                    class="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-slate-200 focus:outline-none focus:border-amber-400 transition">
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Info -->
+    <main class="max-w-7xl mx-auto px-4 mt-8 space-y-8">
+        <div class="bg-gradient-to-r from-slate-900 via-amber-950/30 to-slate-900 border border-amber-500/30 rounded-2xl p-6 shadow-xl flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2">
+                    <i class="fa-solid fa-clock"></i> เวลาทำการสภา & สตอรี่
+                </h2>
+                <p class="text-slate-300 mt-1">เวลาทำการ: <span class="font-semibold text-white">15:00 - 02:00 น.</span> | เวลาเปิดรับเรื่องสตอรี่: <span class="font-semibold text-white">18:00 - 00:00 น.</span></p>
+            </div>
+            <div class="bg-amber-500/10 border border-amber-500/30 px-4 py-2 rounded-xl text-xs text-amber-300 text-center font-medium">
+                ⚠️ การตัดสินใจของประธานสภาถือเป็นที่สิ้นสุด
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- SECTION 1: กฎสภา -->
+            <div class="space-y-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-amber-400 border-b border-slate-800 pb-3 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced"></i> กฎระเบียบสภา (สำหรับสมาชิกสภา)
+                    </h3>
+                    <p class="text-xs text-slate-400 mb-4">* กฎสภาอาจมีการปรับเปลี่ยนหรือปรับปรุงเพื่อให้สอดคล้องกับเหตุการณ์ตลอดเวลา โปรดศึกษาข้อมูลเป็นประจำ</p>
+
+                    <div class="space-y-3">
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">1. ห้ามเอื้อผลประโยชน์ให้กับผู้อื่นโดยเด็ดขาด (แก๊ง, ครอบครัว, MC, ประชาชน)</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: ดุลยพินิจของประธานสภา (พิจารณาจากความเสียหาย ซึ่งอาจร้ายแรงหรือพ้นสภาพหรือหน่วยงานดำ)</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">2. สภาจะต้องเข้าวอสื่อสารทุกครั้งขณะปฏิบัติหน้าที่ (หากต้องการออกจากวอสื่อสาร แจ้งเหตุผลและขออนุญาตก่อนทุกครั้ง)</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ตักเตือน / ครั้งที่ 2 ปรับ 50,000 / ครั้งที่ 3 ปรับ 50,000 + บำเพ็ญ 100 ไม้</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">3. ขณะปฏิบัติหน้าที่ต้องสวมใส่เครื่องแบบหน่วยงานสภาให้เรียบร้อย</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ตักเตือน / ครั้งที่ 2 ปรับ 50,000 / ครั้งที่ 3 ปรับ 50,000 + บำเพ็ญ 100 ไม้</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">4. สภาต้องปฏิบัติหน้าที่ด้วยความเป็นกลาง ห้ามเลือกปฏิบัติกับฝ่ายใดฝ่ายหนึ่ง หรือใช้ความรู้สึกส่วนตัวมาใช้ในการตัดสินทุกกรณี</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: ดุลยพินิจของประธานสภา</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">5. สภาต้องรู้จักวางตัวให้เหมาะสม ควบคุมอารมณ์และรู้จักกาลเทศะ ทั้งขณะปฏิบัติหน้าที่และไม่ได้ปฏิบัติหน้าที่</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: ดุลยพินิจของประธานสภา</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">6. หากมีการตัดสินใจจากสภาที่ผิดพลาด สมาชิกสภาทั้งหมดรับผิดชอบร่วมกัน</p>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">7. ห้ามเปิดเผยข้อมูลภายในสภาให้กับผู้อื่นโดยเด็ดขาด</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: เข้าข่ายสภาดำ + ถูกปลดจากสภาในทันที + ใบแดง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">8. สภาห้ามทำงานดำ ไม่ว่าจะเป็นตอนเข้าเวร - ออกเวร</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: ถูกปลดจากสภาในทันที</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">9. ห้ามผู้ไม่เกี่ยวข้องขึ้นรถของหน่วยงานสภาโดยเด็ดขาด</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 บำเพ็ญ 300 ไม้ / ครั้งถัดไป เพิ่มทบขึ้นทีละ 100 ไม้</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">10. ห้ามทำรถสภาหลุดโดยเด็ดขาด</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ปรับ 50,000 + บำเพ็ญ 500 ไม้ / ครั้งถัดไป เพิ่มทบขึ้นทีละ 100 ไม้</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">11. ห้ามนำสิ่งของที่เป็นของสภา ไปขาย แจกจ่าย หรือส่งต่อให้ผู้ที่ไม่เกี่ยวข้องเด็ดขาด หากออกจากหน่วยงานต้องคืนสิ่งของทั้งหมด</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: เข้าข่ายสภาดำ + ถูกปลดจากสภาในทันที + ใบแดง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">12. ในขณะสวมเครื่องแบบสภา ห้าม อุ้มหรือโดนอุ้มจาก แก๊ง ครอบครัว หรือ MC (ที่มีตราสัญลักษณ์) โดยเด็ดขาด</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ปรับ 10,000 / ครั้งถัดไป เพิ่มทบขึ้นทีละ 10,000</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">13. ห้ามใช้เมนูหน่วยงานในทางที่ผิด หรือเพื่อประโยชน์ส่วนตัวเด็ดขาด</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: ดุลยพินิจของประธานสภา</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">14. ห้ามควักอาวุธหน่วยงานต่อหน้าประชาชนในที่สาธารณะ (ยกเว้นหากมีเหตุจำเป็น)</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ปรับ 10,000 / ครั้งถัดไป เพิ่มทบขึ้นทีละ 10,000</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">15. สภาต้องเข้าร่วมประชุมตามนัดหมาย หากมีเหตุจำเป็นต้องแจ้งก่อนเท่านั้น</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ปรับ 10,000 / ครั้งถัดไป เพิ่มทบขึ้นทีละ 10,000</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">16. หากลาออกจากสภา จะติดคูลดาวน์ 7 วัน ถึงจะสามารถเข้าแก๊งหรือเป็นหน่วยงานอื่นได้ (เว้นแต่ได้รับอนุมัติจากประธาน/รองประธาน)</p>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">17. ในเวลาทำการ สามารถเหม่อได้ 2 ครั้ง/วัน ครั้งละไม่เกิน 30 นาที</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: เหม่อจนสลบปรับ 100,000 / ครั้ง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">18. ในเวลาทำการสามารถออกเวรชั่วคราว 1 ครั้ง/วัน ครั้งละไม่เกิน 15 นาที</p>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">19. ขณะเข้าเวรต้องอยู่ ณ ที่ทำการสภาเท่านั้น (เว้นแต่ได้รับอนุญาตจากประธาน/รองประธาน)</p>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">20. นอกเวลาทำการสามารถออกเวรไปฟาร์มงานขาวได้</p>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">21. เงื่อนไขการออกจากสภา ต้องเป็นสภาครบ 60 วัน หากต้องการออกก่อน ค่าธรรมเนียมฉีกสัญญา 5,000,000</p>
+                        </div>
+                    </div>
+
+                    <!-- กฎทั่วไป -->
+                    <h4 class="text-lg font-bold text-amber-400 mt-6 border-b border-slate-800 pb-2 mb-3">กฎทั่วไป (สำหรับบุคคลภายนอก/ประชาชน)</h4>
+                    <div class="space-y-3">
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">1. ห้ามสวมใส่เครื่องแบบสภาหรือแอบอ้างว่าเป็นสภา</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ปรับ 300,000 / ครั้ง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">2. ติดต่อธุรกรรมกับสภา ต้องเก็บยานพาหนะให้เรียบร้อย</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ตักเตือน / หากยังไม่เก็บปรับ 10,000 ต่อครั้งที่เตือน</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">3. ห้ามเหินหรือขับยานพาหนะเข้าที่ทำการสภา รวมถึงการเล่นสเก็ตบอร์ด (ไม่ว่าจะเป็นสตอรี่, หนีตำรวจ ฯลฯ)</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ปรับ 30,000 / ครั้งถัดไป เพิ่มทบขึ้นทีละ 10,000</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">4. ห้ามพูดจาไม่ให้เกียรติสภา ดูหมิ่น ข่มขู่ แซะ ล้อหลอก หรือประพฤติตัวไม่เหมาะสมรวมถึงการบัฟต่อหน้าสภา</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ตักเตือน / หากมีอีกครั้ง ปรับ 100,000 ต่อแก๊ง + บำเพ็ญ 500 ไม้ ทุกคนในแก๊ง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">5. ห้ามส่งเสียงดังรบกวน ณ ที่ทำการสภา</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ตักเตือน / หากยังไม่หยุด ปรับ 100,000 / ครั้ง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">6. การติดต่อสภาทุกครั้งต้องสวมใส่ชุดแก๊ง/ครอบครัว/MC ที่แสดงสัญลักษณ์ที่ชัดเจนให้เรียบร้อย</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: ไม่รับทำธุรกรรม</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">7. ห้าม แต่งกายอนาจาร, โป๊เปลือย, ไม่สุภาพ, ปิดบังใบหน้า (เต็มหน้า) ขณะติดต่อทำธุรกรรมกับสภา</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: ไม่รับทำธุรกรรม</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">8. ห้ามขโมยรถบริเวณที่ทำการสภา</p>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">9. ห้ามถืออาวุธภายในพื้นที่ทำการสภา</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ครั้งที่ 1 ตักเตือน / หากยังไม่เก็บ ปรับ 50,000 / ครั้ง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">10. ห้ามขโมยยานพาหนะของหน่วยงานสภาโดยเด็ดขาด</p>
+                            <span class="text-xs text-amber-400 font-semibold block mt-1">โทษ: ปรับ 500,000 / ครั้ง</span>
+                        </div>
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">11. เมื่อขึ้นเป็นสมาชิกภายใต้หน่วยงานสภา จะต้องทำตามกฎ และระเบียบที่สภาได้กำหนดไว้ อย่างเคร่งครัด</p>
+                            <span class="text-xs text-red-400 font-semibold block mt-1">โทษ: โทษตามระเบียบ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: เงื่อนไขการขึ้น Gang / ครอบครัว / MC -->
+            <div class="space-y-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-amber-400 border-b border-slate-800 pb-3 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-users"></i> เงื่อนไขการขึ้น Gang / ครอบครัว / MC Club
+                    </h3>
+
+                    <!-- Slot Summary Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 text-center">
+                            <p class="text-xs text-slate-400 font-bold">GANG</p>
+                            <p class="text-sm text-amber-400 font-semibold mt-1">20 Slot (ขั้นต่ำ 15 คน)</p>
+                            <p class="text-[11px] text-slate-400">หัว 1 คน / รองหัว 2 คน</p>
+                            <p class="text-[10px] text-amber-300 mt-1">บัตร Create Member: 20 ใบ</p>
+                        </div>
+                        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 text-center">
+                            <p class="text-xs text-slate-400 font-bold">ครอบครัว</p>
+                            <p class="text-sm text-amber-400 font-semibold mt-1">10 Slot (ขั้นต่ำ 7 คน)</p>
+                            <p class="text-[11px] text-slate-400">หัว 1 คน / รองหัว 1 คน</p>
+                            <p class="text-[10px] text-amber-300 mt-1">บัตร Create Member: 10 ใบ</p>
+                        </div>
+                        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 text-center">
+                            <p class="text-xs text-slate-400 font-bold">MC CLUB</p>
+                            <p class="text-sm text-amber-400 font-semibold mt-1">15 Slot (ขั้นต่ำ 12 คน)</p>
+                            <p class="text-[11px] text-slate-400">หัว 1 คน / รองหัว 1 คน</p>
+                            <p class="text-[10px] text-amber-300 mt-1">บัตร Create Member: 10 ใบ</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">1. การขึ้นทะเบียน:</p>
+                            <p class="text-xs text-slate-400 mt-1">• สมาชิกทุกคนตามจำนวนขั้นต่ำจะต้องมา ณ ที่ทำการสภาพร้อมกันทุกคน</p>
+                            <p class="text-xs text-slate-400">• ต้องเตรียมบัตร Create Member มาให้ครบตามจำนวน</p>
+                            <p class="text-xs text-slate-400">• ต้องส่งชื่อ, สี (โค้ดสี), และสัญลักษณ์ ณ ตอนขึ้นทะเบียน</p>
+                        </div>
+
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">2. ระบบ Protect (การคุ้มครอง):</p>
+                            <p class="text-xs text-slate-400 mt-1">• สมาชิกที่ลงทะเบียนใหม่จะได้รับ Protect เป็นระยะเวลา 14 วัน</p>
+                            <p class="text-xs text-slate-400">• ต้องสวมใส่ปลอกแขน Protect ตตลอดเวลา (รวมถึงตอนฟาร์ม)</p>
+                            <p class="text-xs text-amber-400">• หากไม่ใส่ปลอกแขน Protect แล้วโดนเปิดสตอรี่ จะถือว่าผู้ที่ไม่ใส่ไม่มี Protect และจะทำให้กลุ่มเสีย Protect ทันที</p>
+                            <p class="text-xs text-red-400">• หากไม่มี Protect ห้ามใส่ปลอกแขน Protect ทุกกรณี</p>
+                        </div>
+
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">3. กฎข้อห้ามและบทลงโทษเกี่ยวกับ Protect:</p>
+                            <p class="text-xs text-slate-400 mt-1">• ห้ามเปิดสตอรี่กลุ่มที่มี Protect ไม่ว่าจะด้วยวาจา พฤติกรรม หรือท่าทาง Emote ทุกชนิด</p>
+                            <span class="text-xs text-red-400 font-semibold block mb-2">โทษ: ปรับ 1,000,000 / ครั้ง + บำเพ็ญ 1,000 ไม้</span>
+                            <p class="text-xs text-slate-400">• ห้ามกลุ่มที่มี Protect ไปหาเรื่องกลุ่มอื่น ไม่ว่าจะด้วยวาจา พฤติกรรม หรือท่าทาง Emote ทุกชนิด</p>
+                            <span class="text-xs text-red-400 font-semibold block mb-2">โทษ: Protect แตกทันที</span>
+                            <p class="text-xs text-slate-400">• กรณีผู้ที่มี Protect ถูกหาเรื่อง และไม่มีการตอบโต้ด้วยวาจา พฤติกรรม หรือท่าทาง ฝ่ายที่หาเรื่องจะถูกลงโทษตามกฎ</p>
+                        </div>
+
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">4. ค่าธรรมเนียมและการจัดการคน (หัว/รอง มีสิทธิ์ทำธุรกรรมเท่านั้น):</p>
+                            <p class="text-xs text-slate-400 mt-1">• <strong>เพิ่มคน:</strong> 1 Slot / 1 Create Member (เงื่อนไข: ต้องนำสมาชิกใหม่มาที่ทำการสภาด้วย)</p>
+                            <p class="text-xs text-slate-400">• <strong>เอาคนออก:</strong> 1 Slot / 1 Exit Member (สามารถปลดลอยได้)</p>
+                            <p class="text-xs text-slate-400">• <strong>เปลี่ยน Slot:</strong> 1 Create Member / 1 Slot</p>
+                            <p class="text-xs text-slate-400">• <strong>เปลี่ยนหัว/รอง:</strong> 2 Create Member / คน (เงื่อนไข: ต้องนำสมาชิกที่จะเปลี่ยนมาด้วย)</p>
+                        </div>
+
+                        <div class="rule-card p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+                            <p class="text-sm font-medium text-slate-200">5. ระยะเวลา Cooldown (คูลดาวน์):</p>
+                            <p class="text-xs text-slate-400 mt-1">• เมื่อเข้า Gang / ครอบครัว / MC Club จะติด Cooldown <strong>30 วัน</strong> นับจากวันที่เข้าเป็นสมาชิก ถึงจะสามารถย้าย/เข้ากลุ่มอื่นได้</p>
+                            <p class="text-xs text-slate-400">• หากออกจาก Gang / ครอบครัว / MC Club จะติด Cooldown <strong>14 วัน</strong> ถึงจะสามารถย้ายไปหน่วยงานอื่นได้</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function searchFunction() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var cards = document.getElementsByClassName("rule-card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var cardText = cards[i].innerText.toLowerCase();
+                if (cardText.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
